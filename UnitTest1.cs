@@ -1,19 +1,30 @@
+
 namespace MoodAnalyzerTC
+
 {
-    public class Tests
+    public class Class
     {
-        MoodAnalyserClass mood = new MoodAnalyserClass();
+
 
         [Test]
         public void GivenSadMood_WhenAnalized_ShouldReturnSad()
         {
-            string result = mood.AnalizeMood("I am in Sad Mood");
+            MoodCheck mood = new MoodCheck("I am in Sad Mood");
+            string result = mood.AnalizeMood();
             Assert.AreEqual("Sad", result);
         }
         [Test]
         public void GivenHappyMood_WhenAnalized_ShouldReturnHappy()
         {
-            string result = mood.AnalizeMood("I am in Happy Mood");
+            MoodCheck mood = new MoodCheck("I am in Happy Mood");
+            string result = mood.AnalizeMood();
+            Assert.AreEqual("Happy", result);
+        }
+        [Test]
+        public void GivenNullMood_WhenAnalized_ShouldReturnHappy()
+        {
+            MoodCheck mood = new MoodCheck(null);
+            string result = mood.AnalizeMood();
             Assert.AreEqual("Happy", result);
         }
 
