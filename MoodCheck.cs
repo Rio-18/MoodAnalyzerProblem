@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace MoodAnalyzer
 {
-    internal class MoodCheck
+    public class MoodCheck
     {
+        public string AnalizeMood(string message)
+        {
+            if (message.Contains("Sad"))
+                return "Sad";
+            else
+                return "Happy";
+
+        }
     }
 }
